@@ -1,13 +1,15 @@
 #!/bin/bash
 echo "LEMP stack is being setup...."
 
+current_dir=$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )
+
 cd ~
 
 sudo apt update
 
 sudo apt upgrade
 
-current_dir=$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )
+cd $current_dir
 
 source $current_dir/lemp_for_wp/nginx.sh
 
